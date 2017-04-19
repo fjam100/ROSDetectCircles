@@ -1,0 +1,12 @@
+<launch>
+	<param name="use_sim_time" type="bool" value="true" />
+	<param name="/slam_gmapping/angularUpdate" type="double" value="0.1" />
+	<param name="/slam_gmapping/linearUpdate" type="double" value="0.1" />
+	<param name="/slam_gmapping/lskip" type="int" value="10" />
+	<param name="/slam_gmapping/xmax" type="int" value="10" />
+	<param name="/slam_gmapping/xmin" type="int" value="-10" />
+	<param name="/slam_gmapping/ymax" type="int" value="10" />
+	<param name="/slam_gmapping/ymin" type="int" value="-10" />
+	<node pkg="gmapping" type="slam_gmapping" name="gmapping_name"/>
+	<node pkg="rosbag" type="play" name="player" output="screen" args="--clock $(find exercise3)/robot_bag.bag"/>
+</launch>

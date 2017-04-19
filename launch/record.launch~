@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="rosbag" type="record" name="$(find exercise3)/robot_bag" args="-o robot_bag /scan /tf"/>
+</launch>
+
